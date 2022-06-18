@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Star Admin2 </title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='newlogin/vendors/feather/feather.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='newlogin/vendors/mdi/css/materialdesignicons.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='newlogin/vendors/ti-icons/css/themify-icons.css') }}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='newlogin/css/vertical-layout-light/style.css') }}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" />
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+        <div class="me-3">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+        <div>
+          <a class="navbar-brand brand-logo" href="index.html">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="logo" />
+          </a>
+          <a class="navbar-brand brand-logo-mini" href="index.html">
+            <img src="{{ url_for('static', filename='images/logo-mini.svg') }}" alt="logo" />
+          </a>
+        </div>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-top"> 
+        <ul class="navbar-nav">
+          <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+            <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">Lav Sharma</span></h1>
+            <h3 class="welcome-sub-text">Your to-do list </h3>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+            <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="img-xs rounded-circle" src="{{ url_for('static', filename='images/faces/face8.jpg') }}" alt="Profile image"> </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+              <div class="dropdown-header text-center">
+                <img class="img-md rounded-circle" src="{{ url_for('static', filename='images/faces/face8.jpg') }}" alt="Profile image">
+                <p class="mb-1 mt-3 font-weight-semibold">Lav Sharma</p>
+                <p class="fw-light text-muted mb-0">lavsharma2016@gmail.com</p>
+              </div>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile</a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item nav-category">pages</li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="menu-icon mdi mdi-account-circle-outline"></i>
+              <span class="menu-title">User Pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="home-tab">
+                <div class="tab-content tab-content-basic">
+                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
+                    <div class="row">
+                      <div class="col-lg-4 d-flex flex-column">
+                        <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="col-lg-12">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <h4 class="card-title card-title-dash">Todo list</h4>
+                                      <div class="add-items d-flex mb-0">
+                                        <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?">
+                                        <button class="add btn btn-icons btn-rounded btn-primary todo-list-add-btn text-white me-0 pl-12p"><i class="mdi mdi-plus"></i></button>
+                                      </div>
+                                    </div>
+                                    <div class="list-wrapper">
+                                      <ul class="todo-list todo-list-rounded">
+                                        <li class="d-block">
+                                          <div class="form-check w-100">
+                                            <label class="form-check-label">
+                                              <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy text of the printing <i class="input-helper rounded"></i>
+                                            </label>
+                                            <div class="d-flex mt-2">
+                                              <div class="ps-4 text-small me-3">24 June 2020</div>
+                                              <div class="badge badge-opacity-warning me-3">Due tomorrow</div>
+                                              <i class="mdi mdi-flag ms-2 flag-color"></i>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <li class="d-block">
+                                          <div class="form-check w-100">
+                                            <label class="form-check-label">
+                                              <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy text of the printing <i class="input-helper rounded"></i>
+                                            </label>
+                                            <div class="d-flex mt-2">
+                                              <div class="ps-4 text-small me-3">23 June 2020</div>
+                                              <div class="badge badge-opacity-success me-3">Done</div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <li>
+                                          <div class="form-check w-100">
+                                            <label class="form-check-label">
+                                              <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy text of the printing <i class="input-helper rounded"></i>
+                                            </label>
+                                            <div class="d-flex mt-2">
+                                              <div class="ps-4 text-small me-3">24 June 2020</div>
+                                              <div class="badge badge-opacity-success me-3">Done</div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <li class="border-bottom-0">
+                                          <div class="form-check w-100">
+                                            <label class="form-check-label">
+                                              <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy text of the printing <i class="input-helper rounded"></i>
+                                            </label>
+                                            <div class="d-flex mt-2">
+                                              <div class="ps-4 text-small me-3">24 June 2020</div>
+                                              <div class="badge badge-opacity-danger me-3">Expired</div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- plugins:js -->
+  <script type="text/javascript" src="{{url_for('static', filename='newlogin/vendors/js/vendor.bundle.base.js')}}"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script type="text/javascript" src="{{url_for('static', filename='newlogin/js/todolist.js')}}"></script>
+  <!-- endinject -->
+</body>
+
+</html>
+
